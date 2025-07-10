@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your AI Career Path</title>
+</head>
+<body class="dashboard-body light-theme">
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Your Personalized Career Path</h1>
+            <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+        </header>
+        <div id="career-sections"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    // Theme toggle logic (same as dashboard.html)
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    function setTheme(theme) {
+        root.classList.remove('light-theme', 'dark-theme');
+        root.classList.add(theme);
+        if(theme === 'dark-theme') {
+            themeToggle.textContent = '☀️ Light Mode';
+        } else {
+            themeToggle.textContent = '🌙 Dark Mode';
+        }
+    }
+    setTheme('light-theme');
+    themeToggle.addEventListener('click', () => {
+        if(root.classList.contains('light-theme')) {
+            setTheme('dark-theme');
+        } else {
+            setTheme('light-theme');
+        }
+    });
+
+    </script>
+</body>
+</html>
